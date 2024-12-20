@@ -1,0 +1,46 @@
+import java.util.Scanner; 
+class Shape { 
+double val1, val2; 
+ 
+void input() { 
+Scanner s = new Scanner(System.in); 
+System.out.print("Enter first value: "); 
+        val1 = s.nextDouble(); 
+        System.out.print("Enter second value: "); 
+        val2 = s.nextDouble(); 
+    } 
+} 
+ 
+class Triangle extends Shape { 
+     
+    void computeArea() { 
+        double area = 0.5 * val1 * val2; // Area = 1/2 * base * height 
+        System.out.println("Triangle Area: " + area); 
+    } 
+} 
+ 
+class Rectangle extends Shape { 
+    
+    void computeArea() { 
+        double area = val1 * val2; // Area = length * width 
+        System.out.println("Rectangle Area: " + area); 
+    } 
+} 
+ 
+public class Main { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+ 
+        
+        Triangle triangle = new Triangle(); 
+        System.out.println("Enter dimensions for Triangle:"); 
+        triangle.input(); 
+        triangle.computeArea(); 
+ 
+         
+        Rectangle rectangle = new Rectangle(); 
+        System.out.println("Enter dimensions for Rectangle:"); 
+        rectangle.input(); 
+        rectangle.computeArea(); 
+    } 
+}
